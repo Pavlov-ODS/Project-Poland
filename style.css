@@ -150,12 +150,12 @@ body {
 .hero-content {
     max-width: 500px;
     padding-top: 20px;
-    padding-bottom: 70px;
+    padding-bottom: 25px;
 }
 
 .hero-content h1 {
     font-family: 'AtypDisplay', Arial, sans-serif;
-    font-size: 46px;
+    font-size: 40px;
     font-weight: bold;
     line-height: 1.1;
     margin-bottom: 26px;
@@ -170,18 +170,22 @@ body {
 }
 
 .hero-content p {
-    font-size: 19px;
+    font-size: 22px;
     line-height: 1.5;
     margin-bottom: 28px;
     color: #333;
     font-family: 'AtypText', Arial, sans-serif;
+    max-width: 100%;
+    width: 100%;
+    letter-spacing: 1.02px;
 }
 
 .hero-content p a {
     color: #111;
     text-decoration: underline;
-    font-weight: 500;
+    font-weight: 600;
     transition: color .2s;
+    text-underline-offset: 3px;
 }
 
 .hero-content p a:hover {
