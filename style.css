@@ -1,0 +1,533 @@
+@font-face {
+    font-family: 'Dela Gothic One';
+    src: url('Dela_Gothic_One/DelaGothicOne-Regular.ttf') format('truetype');
+    font-weight: normal; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AtypDisplay';
+    src: url('font (2)/AtypDisplay-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AtypText';
+    src: url('font (2)/AtypText-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: 'AtypText', Arial, sans-serif;
+    color: #222;
+    background: #fff;
+}
+
+/* Header */
+.main-header {
+    background: #d23d2c;
+    color: #fff;
+    padding: 0;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.logo {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    color: #fff;
+    line-height: 1;
+}
+
+.header-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.header-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color .2s;
+    font-family: 'AtypDisplay', Arial, sans-serif;
+    letter-spacing: 0.02em;
+}
+
+.header-menu a:hover {
+    color: #ffe5e0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.consult-btn {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 24px;
+    padding: 8px 20px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background .2s, color .2s;
+    text-decoration: none;
+    line-height: 1;
+    display: inline-block;
+    white-space: nowrap;
+    font-family: 'AtypDisplay', Arial, sans-serif;
+    letter-spacing: 0.03em;
+}
+
+.consult-btn:hover {
+    background: #fff;
+    color: #d23d2c;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.social-icons a img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
+    transition: opacity .2s;
+}
+
+.social-icons a img:hover {
+    opacity: 0.8;
+}
+
+/* Hero section */
+
+/* Hero section */
+.hero {
+    background: #fff;
+    padding: 70px 0 0 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 500px;
+    padding-top: 20px;
+    padding-bottom: 70px;
+}
+
+.hero-content h1 {
+    font-family: 'AtypDisplay', Arial, sans-serif;
+    font-size: 46px;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 26px;
+    color: #111;
+    letter-spacing: -0.01em;
+}
+
+.hero-content h1 img {
+    height: 1em;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.hero-content p {
+    font-size: 19px;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    color: #333;
+    font-family: 'AtypText', Arial, sans-serif;
+}
+
+.hero-content p a {
+    color: #111;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color .2s;
+}
+
+.hero-content p a:hover {
+    color: #d23d2c;
+}
+
+.hero-image {
+    flex: 0 0 auto;
+    max-width: 650px;
+    margin-right: -40px;
+    align-self: flex-end;
+    margin-bottom: -4px;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.btn-main {
+    display: inline-block;
+    background: #d23d2c;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 40px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 17px;
+    transition: background .2s;
+    border: none;
+    cursor: pointer;
+    font-family: 'AtypDisplay', Arial, sans-serif;
+    letter-spacing: 0.01em;
+}
+
+.hero-content .btn-main {
+    margin-top: 0;
+    padding: 14px 42px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.hero-content .btn-main:hover {
+    background: #b42c1b;
+}
+
+/* A1 Info section */
+.a1-info {
+    background: #e6cfc1;
+    padding: 60px 0 60px 0;
+    display: flex;
+    justify-content: center;
+}
+.a1-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+.a1-info-text {
+    max-width: 480px;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.a1-info-text h2 {
+    font-family: 'AtypDisplay', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #23262f;
+    text-align: left;
+}
+.a1-info-text p {
+    font-family: 'AtypText', Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.7;
+    color: #111;
+    margin: 0;
+    text-align: left;
+}
+.a1-info-img {
+    flex: 0 0 340px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.a1-info-img img {
+    max-width: 320px;
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+/* Problem section */
+.problem-section {
+    background: #23262f;
+    color: #fff;
+    padding: 36px 0 16px 0;
+}
+.problem-container h2 {
+    font-family: 'AtypDisplay', Arial, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    text-align: center;
+}
+.problem-cards {
+    display: flex;
+    gap: 42px;
+    justify-content: center;
+    align-items: flex-end;
+}
+.problem-card img {
+    max-width: 180px;
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 6px 28px 0 rgba(0,0,0,0.10);
+}
+
+/* Solution section */
+.solution-section {
+    background: #fff;
+    padding: 36px 0 24px 0;
+    text-align: center;
+}
+.solution-section h2 {
+    font-family: 'AtypDisplay', Arial, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+.solution-badge img {
+    max-width: 120px;
+    margin-bottom: 16px;
+}
+.solution-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 22px auto;
+    max-width: 480px;
+    text-align: left;
+}
+.solution-list li {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+.solution-list b {
+    font-weight: bold;
+}
+.solution-section .btn-main {
+    background: #d23d2c;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 17px;
+    font-family: 'AtypDisplay', Arial, sans-serif;
+    font-weight: bold;
+    padding: 10px 32px;
+    text-decoration: none;
+    margin-top: 16px;
+    display: inline-block;
+    transition: background .2s;
+}
+.solution-section .btn-main:hover {
+    background: #b42c1b;
+}
+
+/* Why us section */
+.whyus-section {
+    background: #d23d2c;
+    color: #fff;
+    padding: 32px 0 24px 0;
+    text-align: center;
+}
+.whyus-section h2 {
+    font-family: 'AtypDisplay', Arial, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+.whyus-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+}
+.whyus-stat {
+    font-size: 24px;
+    font-family: 'AtypDisplay', Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+.whyus-stat span {
+    font-size: 36px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Algorithm section */
+.algo-section {
+    background: #fff;
+    padding: 36px 0 24px 0;
+    text-align: center;
+}
+.algo-section h2 {
+    font-family: 'AtypDisplay', Arial, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+.algo-steps {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.algo-step {
+    font-size: 16px;
+    max-width: 170px;
+    text-align: center;
+}
+.algo-num {
+    font-size: 32px;
+    font-family: 'Dela Gothic One', sans-serif;
+    color: #d23d2c;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* FAQ section */
+.faq-section {
+    background: #f2ded3;
+    padding: 36px 0 24px 0;
+}
+.faq-section h2 {
+    font-family: 'AtypDisplay', Arial, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.faq-item {
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+.faq-item b {
+    font-weight: bold;
+}
+
+/* Contact section (form) */
+.contact-section {
+    background: #fff;
+    padding: 36px 0 24px 0;
+}
+.contact-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    justify-content: center;
+}
+.contact-img img {
+    max-width: 300px;
+    border-radius: 10px;
+}
+.contact-form-block {
+    background: #fafafa;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
+    padding: 32px 32px 24px 32px;
+    min-width: 350px;
+    max-width: 410px;
+}
+.contact-form-block h2 {
+    font-family: 'AtypDisplay', Arial, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+.contact-form-block p {
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 7px;
+    border: 1px solid #d8d8d8;
+    font-size: 15px;
+    font-family: 'AtypText', Arial, sans-serif;
+}
+.contact-form textarea {
+    min-height: 60px;
+    resize: vertical;
+}
+.contact-checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+.contact-checkbox input[type="checkbox"] {
+    margin-right: 8px;
+}
+.contact-form button {
+    background: #d23d2c;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: 'AtypDisplay', Arial, sans-serif;
+    font-weight: bold;
+    padding: 10px 32px;
+    border: none;
+    cursor: pointer;
+    transition: background .2s;
+}
+.contact-form button:hover {
+    background: #b42c1b;
+}
+
+/* Footer */
+.footer {
+    background: #f2ded3;
+    color: #d23d2c;
+    padding: 18px 0;
+    text-align: center;
+    font-size: 15px;
+    border-top: 2px solid #e5b6a0;
+}
+.footer-container span {
+    font-family: 'AtypDisplay', Arial, sans-serif;
+    font-size: 15px;
+}
