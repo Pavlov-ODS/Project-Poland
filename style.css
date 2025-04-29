@@ -242,7 +242,8 @@ body {
 /* A1 Info section */
 .a1-info {
     background: #e6cfc1;
-    padding: 40px 0;
+    padding: 0;
+    height: 345px;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -250,21 +251,25 @@ body {
 .a1-info-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 120px;
+    padding: 0 100px 0 120px;
 }
-.a1-info-container h2 {
+.a1-info-container .heading-main {
+    color: #222;
+    text-align: center;
+}
+
+.heading-main {
     font-family: 'AtypDisplay', Arial, sans-serif;
     font-size: 32px;
     font-weight: bold;
-    margin-bottom: 35px;
-    letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: #333;
-    text-align: center;
+    letter-spacing: 0.04em;
+    color: #f4ede6;
+    text-align: left;
+    margin-bottom: 30px;
 }
 .a1-info-content {
     display: flex;
@@ -304,27 +309,44 @@ body {
 .problem-section {
     background: #23262f;
     color: #fff;
-    padding: 36px 0 16px 0;
+    padding: 40px 0 0 0;
+    position: relative;
+    overflow: hidden;
+    height: 345px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.problem-container h2 {
-    font-family: 'AtypDisplay', Arial, sans-serif;
-    font-size: 22px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 28px;
-    text-align: center;
+.problem-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 .problem-cards {
     display: flex;
-    gap: 42px;
+    gap: 120px;
     justify-content: center;
     align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+.problem-card {
+    flex: 0 0 auto;
+    width: 200px;
+    position: relative;
 }
 .problem-card img {
-    max-width: 180px;
     width: 100%;
-    border-radius: 14px;
-    box-shadow: 0 6px 28px 0 rgba(0,0,0,0.10);
+    height: auto;
+    display: block;
 }
 
 /* Solution section */
