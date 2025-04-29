@@ -1,42 +1,146 @@
-@font-face {
-    font-family: 'Dela Gothic One';
-    src: url('Dela_Gothic_One/DelaGothicOne-Regular.ttf') format('truetype');
-    font-weight: normal; 
-    font-style: normal;
-}
 
+       /* --- Подключение и назначение шрифтов --- */
+/* Убедитесь, что пути к файлам шрифтов указаны верно относительно CSS файла */
 @font-face {
-    font-family: 'AtypDisplay';
+    font-family: 'AtypDisplay'; /* Вероятно, не используется, судя по стилям ниже */
     src: url('font (2)/AtypDisplay-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
+    font-display: swap; /* Добавлено для улучшения загрузки */
 }
 
 @font-face {
     font-family: 'AtypText';
     src: url('font (2)/AtypText-Regular.woff2') format('woff2');
-    font-weight: normal;
+    font-weight: normal; /* 400 */
     font-style: normal;
+    font-display: swap; /* Добавлено для улучшения загрузки */
 }
 
+/* Если нужен жирный Atyp Text */
+@font-face {
+    font-family: 'AtypText';
+    src: url('font (2)/AtypText-Bold.woff2') format('woff2'); /* Укажите правильный путь к жирному файлу */
+    font-weight: bold; /* 700 */
+    font-style: normal;
+    font-display: swap; /* Добавлено для улучшения загрузки */
+}
+
+/* Если нужен полужирный Atyp Text */
+@font-face {
+    font-family: 'AtypText';
+    src: url('font (2)/AtypText-Semibold.woff2') format('woff2'); /* Укажите правильный путь к полужирному файлу */
+    font-weight: 600; /* Semibold */
+    font-style: normal;
+    font-display: swap; /* Добавлено для улучшения загрузки */
+}
+
+@font-face {
+    font-family: 'Dela Gothic One';
+    src: url('Dela_Gothic_One/DelaGothicOne-Regular.woff') format('woff'); /* Пример пути, укажите ваш */
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap; /* Добавлено для улучшения загрузки */
+}
+
+
+/* Назначение шрифтов */
 body {
     margin: 0;
-    font-family: 'AtypText', Arial, sans-serif;
+    font-family: 'AtypText', Arial, sans-serif; /* Основной шрифт */
     color: #222;
     background: #fff;
+    font-weight: 400; /* Normal weight */
+    line-height: 1.6;
 }
 
-/* Header */
+/* Заголовки и акцентные элементы */
+h1, h2, h3,
+.consult-btn,
+.btn-main,
+.whyus-stat span, /* Только цифры в секции whyus */
+.faq-item b,
+.contact-form-block h2,
+.solution-list b,
+.algo-step b {
+    /* Используем жирный Atyp Text */
+    font-family: 'AtypText', Arial, sans-serif;
+    font-weight: 700; /* Bold weight */
+}
+
+/* Ссылки в меню хедера */
+.header-menu a {
+    font-family: 'AtypText', Arial, sans-serif;
+    font-weight: 500; /* Medium/Semibold, попробуйте 600, если нужно жирнее */
+}
+
+/* Текст статистики под цифрами */
+.whyus-stat {
+    font-family: 'AtypText', Arial, sans-serif;
+    font-weight: 400; /* Normal */
+}
+
+/* Копирайт в футере */
+.footer-container span, .footer-container a {
+     font-family: 'AtypText', Arial, sans-serif;
+     font-weight: 400; /* Normal */
+}
+
+
+/* Логотип использует Dela Gothic One */
+.logo {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 24px;
+    font-weight: 400; /* У Dela Gothic One обычно только Regular */
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    color: #fff;
+    line-height: 1;
+    text-decoration: none;
+}
+
+/* --- Общие стили --- */
+* {
+     box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: #d23d2c; /* Основной цвет ссылок изменен на красный */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #b42c1b;
+}
+
+/* --- Контейнеры --- */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
 .main-header {
     background: #d23d2c;
     color: #fff;
     padding: 0;
-    height: 52px;
+    min-height: 52px;
     display: flex;
     align-items: center;
     width: 100%;
-    position: relative;
-    z-index: 10;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .header-container {
@@ -46,37 +150,26 @@ body {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 120px;
+    padding: 10px 20px;
     position: relative;
-}
-
-.logo {
-    font-family: 'Dela Gothic One', sans-serif;
-    font-size: 26px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    color: #fff;
-    line-height: 1;
 }
 
 .header-menu {
     display: flex;
-    gap: 40px;
+    gap: 30px;
     align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 0 auto; /* Центрируем меню */
 }
 
 .header-menu a {
     color: #fff;
     text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 15px; /* Можно 14px */
+    /* font-weight: 500; - Задано выше */
     transition: color .2s;
-    font-family: 'AtypDisplay', Arial, sans-serif;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
+    padding: 5px 0;
+    text-transform: uppercase; /* === ИЗМЕНЕНО === */
 }
 
 .header-menu a:hover {
@@ -86,9 +179,7 @@ body {
 .header-right {
     display: flex;
     align-items: center;
-    gap: 20px;
-    margin-left: auto;
-    justify-content: flex-end;
+    gap: 15px;
 }
 
 .consult-btn {
@@ -96,16 +187,16 @@ body {
     color: #fff;
     border: 1px solid #fff;
     border-radius: 24px;
-    padding: 8px 20px;
-    font-weight: 500;
-    font-size: 14px;
+    padding: 8px 15px;
+    font-weight: 600; /* === ИЗМЕНЕНО === */
+    font-size: 13px; /* === ИЗМЕНЕНО === */
     transition: background .2s, color .2s;
     text-decoration: none;
     line-height: 1;
     display: inline-block;
     white-space: nowrap;
-    font-family: 'AtypDisplay', Arial, sans-serif;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.05em; /* === ИЗМЕНЕНО === */
+    text-transform: uppercase; /* === ИЗМЕНЕНО === */
 }
 
 .consult-btn:hover {
@@ -115,13 +206,13 @@ body {
 
 .social-icons {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     align-items: center;
 }
 
 .social-icons a img {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     filter: brightness(0) invert(1);
     transition: opacity .2s;
 }
@@ -130,86 +221,91 @@ body {
     opacity: 0.8;
 }
 
-/* Hero section */
+.mobile-menu-button {
+     display: none;
+     background: none;
+     border: none;
+     padding: 0;
+     cursor: pointer;
+}
+ .mobile-menu-button svg {
+     width: 28px;
+     height: 28px;
+     stroke: #fff;
+}
 
-/* Hero section */
+/* --- Hero section --- */
 .hero {
     background: #fff;
-    padding: 70px 0 0 0;
+    padding: 50px 0 0 0;
     overflow: hidden;
     position: relative;
 }
 
 .hero-container {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 100px 0 120px;
+    padding: 0 20px;
     position: relative;
+    gap: 30px;
 }
 
 .hero-content {
-    max-width: 500px;
-    padding-top: 70px;
-    padding-bottom: 25px;
+    max-width: 550px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    flex: 1;
 }
 
 .hero-content h1 {
-    font-family: 'AtypDisplay', Arial, sans-serif;
-    font-size: 40px;
-    font-weight: bold;
-    line-height: 1.1;
-    margin-bottom: 26px;
+    font-size: 34px;
+    /* font-weight: 700; - Задано выше */
+    line-height: 1.22;
+    margin-bottom: 20px;
     color: #111;
     letter-spacing: -0.01em;
 }
 
 .hero-content h1 img {
-    height: 1em;
-    vertical-align: middle;
-    margin-left: 5px;
+    height: 0.9em;
+    vertical-align: baseline;
+    margin-left: 8px;
+    display: inline-block; /* Добавлено на всякий случай */
 }
 
-.hero-content p {
-    font-size: 22px;
-    line-height: 1.5;
-    margin-bottom: 28px;
-    color: #333;
+.hero-content p, .a1-info-text p {
     font-family: 'AtypText', Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 24px;
     max-width: 100%;
     width: 100%;
-    letter-spacing: 1.02px;
+    letter-spacing: 0.01em;
 }
 
 .hero-content p a {
-    color: #111;
+    color: #d23d2c; /* === ИЗМЕНЕНО === */
     text-decoration: underline;
-    font-weight: 600;
+    font-weight: 600; /* Можно 500 */
     transition: color .2s;
     text-underline-offset: 3px;
 }
 
 .hero-content p a:hover {
-    color: #d23d2c;
+    color: #b42c1b;
 }
 
 .hero-image {
     flex: 0 0 auto;
-    max-width: 650px;
-    margin-right: -70px;
+    max-width: 700px;
     align-self: flex-end;
     margin-bottom: 0;
-    position: relative;
-    left: 0;
-}
-
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
 }
 
 .btn-main {
@@ -217,33 +313,34 @@ body {
     background: #d23d2c;
     color: #fff;
     text-decoration: none;
-    padding: 14px 30px;
+    padding: 12px 50px;
     border-radius: 30px;
-    font-weight: 500;
-    font-size: 16px;
+    /* font-weight: 700; - Задано выше */
+    font-size: 16px; /* Базовый размер */
     transition: background .2s;
     border: none;
     cursor: pointer;
-    font-family: 'AtypDisplay', Arial, sans-serif;
     letter-spacing: 0.01em;
+    text-align: center;
 }
 
 .hero-content .btn-main {
-    margin-top: 0;
-    padding: 14px 42px;
-    font-size: 17px;
-    font-weight: 500;
+    margin-top: 10px;
+    padding: 12px 32px;
+    font-size: 15px;
+    /* font-weight: 700; - Наследуется */
 }
 
-.hero-content .btn-main:hover {
+.hero-content .btn-main:hover,
+.solution-section .btn-main:hover,
+.contact-form button:hover {
     background: #b42c1b;
 }
 
-/* A1 Info section */
+/* --- A1 Info section --- */
 .a1-info {
     background: #e6cfc1;
-    padding: 0;
-    height: 345px;
+    padding: 0 0 60px 0;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -251,322 +348,661 @@ body {
 .a1-info-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 100px 0 120px;
+    padding: 0 20px;
 }
 .a1-info-container .heading-main {
     color: #222;
     text-align: center;
+    font-size: 28px; /* === ИЗМЕНЕНО === */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #222;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.heading-main {
-    font-family: 'AtypDisplay', Arial, sans-serif;
-    font-size: 32px;
-    font-weight: bold;
+.heading-main { 
+    font-family: 'Dela Gothic One', sans-serif;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: #f4ede6;
-    text-align: left;
+    letter-spacing: 0.03em;
+    color: #222;
+    text-align: center;
     margin-bottom: 30px;
+    font-size: 28px;
 }
+
 .a1-info-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch;
     width: 100%;
-    gap: 60px;
+    gap: 40px;
     margin-top: 10px;
+    flex-wrap: wrap;
+}
+.a1-info-text, .a1-info-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
 }
 .a1-info-text {
-    max-width: 460px;
-    flex: 0 0 auto;
+    justify-content: stretch;
+    max-width: 500px;
+    flex: 1 1 400px;
 }
 .a1-info-text p {
-    font-family: 'AtypText', Arial, sans-serif;
     font-size: 18px;
-    line-height: 1.8;
+    line-height: 1.7;
     color: #333;
     margin: 0;
     text-align: left;
 }
 .a1-info-img {
-    flex: 0 0 375px;
+    flex: 0 1 420px; /* === ИЗМЕНЕНО === */
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    margin-right: 20px;
 }
 .a1-info-img img {
     max-width: 100%;
-    width: 375px;
-    border-radius: 0;
-    box-shadow: none;
+    /* width: 375px; - Убрано */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Problem section */
+/* --- Problem section --- */
 .problem-section {
     background: #23262f;
     color: #fff;
-    padding: 40px 0 0 0;
+    padding: 0;
+    min-height: 0;
     position: relative;
     overflow: hidden;
-    height: 345px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .problem-container {
     width: 100%;
-    max-width: 1200px;
+    max-width:1200px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+.problem-section .heading-main {
+    color: #f4ede6;
+    margin-bottom: 40px;
+    /* font-weight: 700; - Задано выше */
+    /* text-transform: uppercase; - Наследуется */
+    /* letter-spacing: 0.04em; - Наследуется */
+    /* text-align: center; - Наследуется */
+    /* font-size: 28px; - Наследуется */
+}
 
 .problem-cards {
     display: flex;
-    gap: 120px;
-    justify-content: center;
+    gap: 30px;
+    justify-content: space-between;
     align-items: flex-end;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-}
-.problem-card {
-    flex: 0 0 auto;
-    width: 200px;
+    min-height: auto;
     position: relative;
-}
-.problem-card img {
+    bottom: -1px;
     width: 100%;
-    height: auto;
-    display: block;
+    flex-wrap: wrap;
+    padding: 0 20px;
 }
 
-/* Solution section */
+.problem-card {
+    flex: 0 0 auto;
+    width: 220px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+.problem-card img {
+    position: static;
+    height: 280px;
+    object-fit: contain;
+    margin: 0 auto 0 auto;
+    display: block;
+}
+.problem-card:first-child img {
+    height: 320px;
+    max-width: 140%;
+}
+.problem-card:nth-child(2) img {
+    height: 295px;
+    max-width: 115%;
+}
+.problem-card:nth-child(3) img {
+    height: 330px;
+    max-width: 140%;
+}
+
+
+/* --- Solution section --- */
 .solution-section {
     background: #fff;
-    padding: 36px 0 24px 0;
+    padding: 40px 0 30px 0;
     text-align: center;
 }
 .solution-section h2 {
-    font-family: 'AtypDisplay', Arial, sans-serif;
-    font-size: 22px;
-    font-weight: bold;
+    font-family: 'Dela Gothic One', sans-serif;
+    font-weight: 400;
     text-transform: uppercase;
-    margin-bottom: 18px;
+    letter-spacing: 0.03em;
+    color: #222;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+.solution-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto 24px auto;
+    flex-wrap: wrap;
 }
 .solution-badge img {
-    max-width: 120px;
-    margin-bottom: 16px;
+    max-width: 180px;
+    width: 180px;
+    height: auto;
 }
 .solution-list {
     list-style: none;
     padding: 0;
-    margin: 0 auto 22px auto;
+    margin: 0;
     max-width: 480px;
     text-align: left;
+    flex: 1;
 }
 .solution-list li {
-    font-size: 18px;
-    margin-bottom: 8px;
+    font-size: 17px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    padding-left: 25px;
+    position: relative;
+}
+.solution-list li::before {
+    content: '\2713'; /* Checkmark */
+    color: #d23d2c;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    font-size: 1.1em;
 }
 .solution-list b {
-    font-weight: bold;
+    /* font-weight: 700; - Задано выше */
+    color: inherit; /* Наследует цвет родителя li */
 }
 .solution-section .btn-main {
-    background: #d23d2c;
-    color: #fff;
-    border-radius: 20px;
-    font-size: 17px;
-    font-family: 'AtypDisplay', Arial, sans-serif;
-    font-weight: bold;
-    padding: 10px 32px;
-    text-decoration: none;
-    margin-top: 16px;
+    font-size: 18px;
+    padding: 14px 50px;
+    margin-top: 10px;
     display: inline-block;
-    transition: background .2s;
-}
-.solution-section .btn-main:hover {
-    background: #b42c1b;
+    border-radius: 30px;
+    font-family: 'AtypText', Arial, sans-serif;
+    font-weight: 700;
 }
 
-/* Why us section */
+/* --- Why us section --- */
 .whyus-section {
     background: #d23d2c;
     color: #fff;
-    padding: 32px 0 24px 0;
+    padding: 60px 20px;
     text-align: center;
 }
 .whyus-section h2 {
-    font-family: 'AtypDisplay', Arial, sans-serif;
-    font-size: 22px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 28px;
+    /* font-size: 28px; - Наследуется */
+    /* font-weight: 700; - Задано выше */
+    /* text-transform: uppercase; - Наследуется */
+    margin-bottom: 40px;
+    color: #fff;
 }
 .whyus-stats {
     display: flex;
     justify-content: center;
-    gap: 48px;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 .whyus-stat {
-    font-size: 24px;
-    font-family: 'AtypDisplay', Arial, sans-serif;
-    font-weight: bold;
+    font-size: 16px;
+    /* font-weight: 400; - Задано выше */
     text-align: center;
+    flex: 1 1 200px;
+    max-width: 220px;
+    line-height: 1.4;
 }
 .whyus-stat span {
-    font-size: 36px;
+    font-family: 'AtypText', Arial, sans-serif; /* Используем основной жирный шрифт */
+    /* font-weight: 700; - Задано выше */
+    font-size: 48px;
     display: block;
     margin-bottom: 8px;
+    line-height: 1.1;
 }
 
-/* Algorithm section */
+/* --- Algorithm section --- */
 .algo-section {
     background: #fff;
-    padding: 36px 0 24px 0;
+    padding: 60px 20px;
     text-align: center;
 }
 .algo-section h2 {
-    font-family: 'AtypDisplay', Arial, sans-serif;
-    font-size: 22px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 24px;
+     /* font-size: 28px; - Наследуется */
+     /* font-weight: 700; - Задано выше */
+     /* text-transform: uppercase; - Наследуется */
+     margin-bottom: 50px;
+     color: #222;
 }
+
 .algo-steps {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    margin-bottom: 24px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+}
+.algo-steps::before { /* Линия прогресса */
+    content: '';
+    position: absolute;
+    top: 24px; /* Позиционируем по центру кружков */
+    left: 5%; /* Отступы по бокам */
+    right: 5%;
+    height: 4px;
+    background: #f1f1f1;
+    z-index: 0;
+    border-radius: 2px;
 }
 .algo-step {
     font-size: 16px;
-    max-width: 170px;
+    flex: 1;
+    max-width: 180px;
     text-align: center;
+    position: relative;
+    z-index: 1;
+    background: #fff; /* Чтобы перекрывать линию */
+    padding: 0 5px;
 }
 .algo-num {
-    font-size: 32px;
+    font-size: 24px;
     font-family: 'Dela Gothic One', sans-serif;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px auto;
+    background: #fff;
+    border: 3px solid #f1f1f1;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-weight: 400;
+    position: relative;
+    z-index: 2;
+    transition: border-color 0.3s, color 0.3s;
+}
+/* Активный шаг (можно добавить JS для динамики) */
+.algo-step:first-child .algo-num { /* Пример: первый шаг активен */
+    border-color: #d23d2c;
     color: #d23d2c;
-    display: block;
-    margin-bottom: 8px;
+}
+.algo-step b {
+    /* font-weight: 700; - Задано выше */
+    color: #222;
+}
+.algo-desc {
+    font-size: 14px;
+    color: #555;
+    margin-top: 4px;
+    line-height: 1.5;
+    text-align: center;
 }
 
-/* FAQ section */
+
+/* --- FAQ section --- */
 .faq-section {
     background: #f2ded3;
-    padding: 36px 0 24px 0;
+    padding: 60px 20px;
 }
 .faq-section h2 {
-    font-family: 'AtypDisplay', Arial, sans-serif;
-    font-size: 22px;
-    font-weight: bold;
-    text-transform: uppercase;
+    /* font-size: 28px; - Наследуется */
+    /* font-weight: 700; - Задано выше */
+    /* text-transform: uppercase; - Наследуется */
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
+    color: #222;
 }
 .faq-list {
     max-width: 800px;
     margin: 0 auto;
 }
 .faq-item {
-    font-size: 17px;
-    margin-bottom: 18px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    line-height: 1.6;
 }
 .faq-item b {
-    font-weight: bold;
+    /* font-weight: 700; - Задано выше */
+    display: block;
+    margin-bottom: 8px;
+    color: #222;
+    font-size: 17px;
 }
 
-/* Contact section (form) */
+/* --- Contact section (form) --- */
 .contact-section {
     background: #fff;
-    padding: 36px 0 24px 0;
+    padding: 60px 20px;
 }
 .contact-container {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 40px;
     justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.contact-img {
+    flex: 0 0 300px;
+    text-align: center;
 }
 .contact-img img {
-    max-width: 300px;
+    max-width: 100%;
     border-radius: 10px;
 }
 .contact-form-block {
     background: #fafafa;
     border-radius: 14px;
-    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
-    padding: 32px 32px 24px 32px;
-    min-width: 350px;
-    max-width: 410px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    padding: 30px;
+    flex: 1 1 400px;
+    max-width: 450px;
 }
 .contact-form-block h2 {
-    font-family: 'AtypDisplay', Arial, sans-serif;
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 24px;
+    /* font-weight: 700; - Задано выше */
     text-transform: uppercase;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #222;
 }
 .contact-form-block p {
-    font-size: 16px;
-    margin-bottom: 18px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #555;
+    line-height: 1.5;
+}
+.contact-note {
+    display: block;
+    font-size: 14px;
+    margin-top: 8px;
+    color: #777;
+}
+.contact-form {
+    margin-top: 20px;
 }
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 12px;
-    border-radius: 7px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
     border: 1px solid #d8d8d8;
     font-size: 15px;
-    font-family: 'AtypText', Arial, sans-serif;
+    font-family: 'AtypText', Arial, sans-serif; /* Убедимся, что используется нужный шрифт */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #d23d2c;
+    box-shadow: 0 0 0 2px rgba(210, 61, 44, 0.2);
 }
 .contact-form textarea {
-    min-height: 60px;
+    min-height: 80px;
     resize: vertical;
 }
 .contact-checkbox {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     font-size: 13px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.4;
 }
 .contact-checkbox input[type="checkbox"] {
     margin-right: 8px;
+    flex-shrink: 0;
+    margin-top: 3px;
+    width: 15px;
+    height: 15px;
+}
+.contact-checkbox a {
+    color: #d23d2c;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.contact-checkbox a:hover {
+    text-decoration: none;
 }
 .contact-form button {
-    background: #d23d2c;
-    color: #fff;
-    border-radius: 20px;
+    /* Стили частично наследуются от .btn-main */
     font-size: 16px;
-    font-family: 'AtypDisplay', Arial, sans-serif;
-    font-weight: bold;
-    padding: 10px 32px;
-    border: none;
-    cursor: pointer;
-    transition: background .2s;
-}
-.contact-form button:hover {
-    background: #b42c1b;
+    padding: 12px 35px;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
 }
 
-/* Footer */
+/* --- Footer --- */
 .footer {
     background: #f2ded3;
-    color: #d23d2c;
-    padding: 18px 0;
+    color: #553c2d;
+    padding: 25px 20px;
     text-align: center;
-    font-size: 15px;
-    border-top: 2px solid #e5b6a0;
+    font-size: 14px;
+    border-top: 1px solid #e5b6a0;
 }
 .footer-container span {
-    font-family: 'AtypDisplay', Arial, sans-serif;
-    font-size: 15px;
+    /* font-family: 'AtypText', Arial, sans-serif; - Задано выше */
+    font-size: 14px;
+    /* font-weight: 400; - Задано выше */
 }
+.footer-container a {
+    color: #553c2d;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    margin-right: 5px;
+    /* font-family: 'AtypText', Arial, sans-serif; - Задано выше */
+    font-size: 14px; /* Убедимся, что размер такой же */
+    /* font-weight: 400; - Задано выше */
+}
+.footer-container a:hover {
+    text-decoration: none;
+}
+
+
+/* --- Адаптивность --- */
+
+/* Планшеты и маленькие десктопы */
+@media (max-width: 1024px) {
+    .header-container { padding: 10px 30px; }
+    .header-menu { gap: 20px; }
+    .hero-container { padding: 0 30px; flex-direction: column; text-align: center;} /* Изменено */
+    .hero-content { order: 2; padding-top: 30px; padding-bottom: 30px; max-width: 90%;} /* Изменено */
+    .hero-content h1 { font-size: 36px; } /* Изменено */
+    .hero-content p { font-size: 17px; } /* Изменено */
+    .hero-image { order: 1; max-width: 480px; margin: 0 auto 20px auto; align-self: center;} /* Изменено */
+
+    .a1-info-container { padding: 0 30px; }
+    .a1-info-content { gap: 30px; flex-direction: column; } /* Изменено */
+    .a1-info-text { text-align: center; } /* Изменено */
+    .a1-info-img { max-width: 400px; margin: 0 auto; } /* Изменено */
+
+    .problem-container { padding: 0 30px; }
+    .problem-cards { gap: 20px; justify-content: center; } /* Изменено */
+    .problem-card { width: calc(33.33% - 20px); min-width: 180px; } /* Изменено */
+
+    .solution-content { gap: 30px; max-width: 700px; }
+    .whyus-stats { gap: 20px; }
+    .whyus-stat span { font-size: 40px; }
+    .whyus-stat { font-size: 15px; flex-basis: calc(50% - 15px); } /* Изменено */
+
+    .algo-steps { gap: 15px; padding: 0; flex-wrap: wrap;} /* Изменено */
+    .algo-steps::before { display: none; } /* Скрываем линию */
+    .algo-step { max-width: calc(33.33% - 15px); margin-bottom: 20px;} /* Изменено */
+    .algo-num { width: 45px; height: 45px; font-size: 22px; }
+    .algo-desc { font-size: 13px; }
+
+    .faq-list { max-width: 700px; }
+    .contact-container { gap: 30px; max-width: 800px; }
+    .contact-img { flex-basis: 250px; }
+}
+
+/* Мобильные устройства (ландшафт и большие телефоны) */
+@media (max-width: 768px) {
+    .header-menu { display: none; }
+    .header-right .consult-btn { display: none; }
+    .header-right .social-icons { display: none; }
+    .mobile-menu-button { display: block; }
+    .header-container { justify-content: space-between; }
+    .logo { font-size: 22px; }
+
+    .hero-container { padding: 0 20px; }
+    .hero-content { padding-top: 30px; padding-bottom: 20px; order: 2; max-width: 100%;}
+    .hero-image { max-width: 95vw; order: 1; margin-bottom: 20px; align-self: center; }
+    .hero-content h1 { font-size: 30px; }
+    .hero-content p { font-size: 16px; } /* Изменено */
+    .hero-content .btn-main { font-size: 16px; padding: 12px 30px;} /* Изменено */
+
+    .heading-main,
+    .a1-info-container .heading-main,
+    .problem-section .heading-main,
+    .solution-section h2,
+    .whyus-section h2,
+    .algo-section h2,
+    .faq-section h2,
+    .contact-form-block h2 { font-size: 24px; } /* Единый размер заголовков секций */
+
+    .a1-info { padding: 40px 20px; }
+    .a1-info-content { gap: 30px; }
+    .a1-info-text { max-width: 100%; text-align: center; }
+    .a1-info-img { max-width: 300px; margin: 0 auto; }
+
+    .problem-section { padding: 40px 0 0 0; }
+    .problem-cards { flex-direction: column; align-items: center; gap: 25px; padding-bottom: 30px; bottom: auto; } /* Изменено */
+    .problem-card { width: 80%; max-width: 250px; flex-basis: auto; } /* Изменено */
+
+    .solution-section { padding: 40px 20px; }
+    .solution-content { flex-direction: column; gap: 25px; margin-bottom: 30px; }
+    .solution-list { text-align: center; }
+    .solution-list li { padding-left: 0; text-align: center; font-size: 16px; } /* Изменено */
+    .solution-list li::before { display: none; }
+
+    .whyus-section { padding: 40px 20px; }
+    .whyus-stats { flex-direction: column; gap: 25px; }
+    .whyus-stat { flex-basis: auto; max-width: 100%; }
+    .whyus-stat span { font-size: 36px; }
+
+    .algo-section { padding: 40px 20px; }
+    .algo-section h2 { margin-bottom: 30px; }
+    .algo-steps { flex-direction: column; gap: 30px; }
+    .algo-step { max-width: 80%; margin: 0 auto; flex-basis: auto;} /* Изменено */
+    .algo-desc { text-align: center; }
+
+    .faq-section { padding: 40px 20px; }
+    .faq-item { font-size: 15px; }
+    .faq-item b { font-size: 16px; }
+
+    .contact-section { padding: 40px 20px; }
+    .contact-container { flex-direction: column; gap: 30px; }
+    .contact-img { order: 2; max-width: 200px; margin: 0 auto; }
+    .contact-form-block { order: 1; min-width: 100%; padding: 25px; max-width: 100%;}
+}
+
+/* --- Мобильное меню --- */
+.mobile-menu-panel {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95); /* Сделать фон темнее */
+    z-index: 110;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    opacity: 0; /* Начальное состояние для анимации */
+    transition: opacity 0.3s ease-in-out; /* Плавное появление */
+}
+.mobile-menu-open .mobile-menu-panel {
+    display: flex;
+    opacity: 1; /* Конечное состояние для анимации */
+}
+/* Стили для body, когда меню открыто (предотвращение скролла) */
+body.mobile-menu-open {
+    overflow: hidden;
+}
+
+.mobile-menu-panel a {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px 20px; /* Увеличить область клика */
+    transition: color 0.2s;
+}
+.mobile-menu-panel a:hover {
+    color: #d23d2c; /* Цвет при наведении */
+}
+.mobile-menu-panel .close-menu-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    padding: 5px; /* Небольшой паддинг для удобства нажатия */
+    cursor: pointer;
+}
+ .mobile-menu-panel .close-menu-button svg {
+     width: 30px;
+     height: 30px;
+     stroke: #fff;
+     transition: stroke 0.2s;
+}
+ .mobile-menu-panel .close-menu-button:hover svg {
+     stroke: #d23d2c; /* Цвет иконки закрытия при наведении */
+ }
